@@ -1,4 +1,13 @@
 public class ParallelMatrixProduct {
-    int ThreadsNum;
+    int threadsNum;
+    
+    public ParallelMatrixProduct(int threadsNum) {
+        this.threadsNum = threadsNum;
+    }
+    
+    public product(UsualMatrix a, UsualMatrix b) {
+        if (a.)
+    }
+}
     
     
