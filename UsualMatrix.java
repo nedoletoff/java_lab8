@@ -71,7 +71,7 @@ public class UsualMatrix extends Matrix implements IMatrix {
 
     public IMatrix product(IMatrix other) throws MyException {
         if(this.getColumnsNum() !=other.getRowsNum())
-            throw new MyException("matrix cannot be product");
+            throw new MyException("matrix cannot be produced");
         IMatrix result = new UsualMatrix(this.getRowsNum(), other.getColumnsNum());
 
         for(int m = 0; m<result.getRowsNum();m++)
