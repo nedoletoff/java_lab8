@@ -39,6 +39,10 @@ public class Generator {
         }
     }
 
+    public void clearArrays() {
+        arrays.clear();
+    }
+
     public void parallelGenerate() {
         int resultNum = (int) Math.pow(n, k);
         int forOneThread = resultNum / threadsNum;
