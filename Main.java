@@ -1,30 +1,25 @@
+import java.io.PrintStream;
+import java.sql.Time;
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        int num = 1000;
-        Random random = new Random();
-        UsualMatrix a = new UsualMatrix(num, num);
-        UsualMatrix b = new UsualMatrix(num, num);
-        ParallelMatrixProduct parallel = new ParallelMatrixProduct(10);
-        for (int i = 0; i < num; i++)
-            for (int j = 0; j < num; j++) {
-                a.setElement(i, j, random.nextInt(100)-50);
-                b.setElement(i, j, random.nextInt(100)-50);
-
-            }
-
+        Generator r1 = new Generator(15, 6, 1);
+        Generator r2 = new Generator(15,6,12);
+        System.out.println("Usual version");
         long time = System.currentTimeMillis();
-        UsualMatrix r1 = (UsualMatrix) a.product(b);
-        System.out.println("Time of usual product: " +
-                (System.currentTimeMillis() - time));
+        r1.usualGenerate();
+        System.out.println("Time - " + (time - System.currentTimeMillis()));
 
+        System.out.println(r1.getResult());
+        //r1.printArrays();
+        System.out.println("Parallel version");
         time = System.currentTimeMillis();
-        UsualMatrix r2 = parallel.product(a, b);
-        System.out.println("Time of parallel product: " +
-                (System.currentTimeMillis() - time));
+        r2.parallelGenerate();
+        System.out.println("Time - " + (time - System.currentTimeMillis()));
 
-        System.out.println("r1 equals r2 = " + r1.equals(r2));
-
+        System.out.println(r2.getResult());
+        //r2.printArrays();
+        // System.out.println(r2.getResult());
     }
 }

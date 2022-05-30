@@ -9,7 +9,6 @@ public class ParallelMatrixProduct {
         if (a.getColumnsNum() != b.getRowsNum()) {
             throw new MyException("matrix cannot be produced");
         }
-
         UsualMatrix result = new UsualMatrix(a.getRowsNum(), b.getColumnsNum());
         Worker[] workers = new Worker[threadsNum];
         int numForOneThread;

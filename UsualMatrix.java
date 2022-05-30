@@ -5,9 +5,9 @@ public class UsualMatrix extends Matrix implements IMatrix {
 
     public UsualMatrix(int rowsNum, int columnsNum) throws MyException {
         if (rowsNum < 0)
-            throw new MyException("rowsNum <= 0");
+            throw new MyException("rowsNum < 0");
         if (columnsNum < 0)
-            throw new MyException("columnsNum <= 0");
+            throw new MyException("columnsNum < 0");
         this.rowsNum = rowsNum;
         this.columnsNum = columnsNum;
         this.matrix = new int[rowsNum][columnsNum];
